@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
+const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const router = require('./routes');
@@ -15,7 +16,7 @@ const app = express();
 mongoose.connect(NODE_ENV !== 'production' ? 'mongodb://localhost:27017/filmsdb' : URL_DB_SERVER, {
   useNewUrlParser: true,
 });
-
+app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
