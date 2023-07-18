@@ -12,7 +12,7 @@ const authorize = (req, res, next) => {
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'secret');
   } catch (error) {
-    return next(new IncorrectData('Неверный логин или пароль'));
+    return next(new IncorrectData('Ключ не подходит'));
   }
   req.user = payload;
   return next();

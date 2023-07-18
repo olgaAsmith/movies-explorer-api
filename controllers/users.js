@@ -53,7 +53,13 @@ const updateUserinfo = (req, res, next) => {
   const info = { name, email };
   User.findByIdAndUpdate(req.user._id, info, { new: true, runValidators: true })
     .then((user) => res.status(200).send({ name: user.name, email: user.email }))
-    .catch(next);
+    .catch((error) => {
+      if (error.code === 11000) {
+        next(new Conflict('Данный Email уже кем то занят'));
+      } else {
+        next(error);
+      }
+    });
 };
 
 const getUserMe = (req, res, next) => {

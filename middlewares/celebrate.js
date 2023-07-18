@@ -42,7 +42,7 @@ const movieInfo = celebrate({
 
 const movieID = celebrate({
   params: Joi.object().keys({
-    id: Joi.string().required(),
+    id: Joi.string().required().length(24).hex(),
   }),
 });
 
