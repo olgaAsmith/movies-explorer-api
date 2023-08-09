@@ -64,9 +64,10 @@ const updateUserinfo = (req, res, next) => {
 
 const getUserMe = (req, res, next) => {
   User.findById(req.user._id)
-    .then((user) => res.status(200).send({ name: user.name, email: user.email }))
+    .then((user) => res.status(200).send(user))
     .catch(next);
 };
+
 module.exports = {
   createUser, login, logout, updateUserinfo, getUserMe,
 };

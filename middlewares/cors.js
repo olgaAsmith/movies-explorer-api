@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://moviepoisk.nomoredomains.xyz/',
-  'http://moviepoisk.nomoredomains.xyz/',
+  'https://moviepoisk.nomoredomains.xyz',
+  'http://moviepoisk.nomoredomains.xyz',
   'http://localhost:3000',
   'http://localhost:3001',
 ];
