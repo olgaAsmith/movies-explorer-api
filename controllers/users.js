@@ -4,7 +4,6 @@ const User = require('../models/users');
 const Conflict = require('../errors/Conflict');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
-
 const createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
     .then((hashed) => {
