@@ -1,10 +1,6 @@
 # BACKEND MOVIEPOISK
-
-
-#### movies-explorer-api можно найти здесь: https://api.moviepoisk.nomoredomains.xyz/
-
-
-
+#### Дипломный проект Yandex Web Development
+----
 ##### В проекте реализовано: 
 
 - регистрация пользователей
